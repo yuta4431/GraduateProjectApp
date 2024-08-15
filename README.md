@@ -60,4 +60,4 @@ MVPリリース
 検索機能: 番組のタイトルや説明に基づいて、クエリをフィルタリングし、ユーザーに検索結果を表示。
 
 画面遷移図
-https://www.figma.com/design/AKrMMKgF9PWjSMG1N2GOIX/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=NupuaokHqieMOk38-0
+https://www.figma.com/design/AKrMMKgF9PWjSMG1N2GOIX/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=QldbLcuiAYqgRcO8-0
