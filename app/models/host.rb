@@ -1,6 +1,5 @@
 class Host < ApplicationRecord
-  belongs_to :program
+  belongs_to :program, optional: true
 
-  validates :name, presence: true, uniqueness: { scope: :program_id }, length: { maximum: 50 }
-  validates :program, presence: true
+  validates :name, presence: true, length: { maximum: 50 }
 end

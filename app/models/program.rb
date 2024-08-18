@@ -3,5 +3,5 @@ class Program < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 100 }
   validates :channel, presence: true
-  validates :date_and_time
+  validates :date_and_time, presence: true
 end
