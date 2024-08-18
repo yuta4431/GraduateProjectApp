@@ -2,7 +2,7 @@ class Program < ApplicationRecord
   has_many :hosts
   belongs_to :user, optional: true
 
-  validates :name, presence: true, length: { maximum: 100 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 100 }
   validates :host_name, presence: true, length: { maximum: 100 }
   validates :channel, presence: true
   validates :broadcast_day, presence: true, length: { maximum: 20 }

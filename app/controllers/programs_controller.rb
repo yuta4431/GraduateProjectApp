@@ -1,6 +1,6 @@
 class ProgramsController < ApplicationController
   def index
-    @programs = current_user.programs.includes(:hosts).order(date_and_time: :asc)
+    @programs = current_user.programs.includes(:hosts).order(start_time: :asc).page(params[:page])
   end
 
   def new

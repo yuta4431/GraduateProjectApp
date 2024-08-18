@@ -52,6 +52,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'sorcery'
+gem 'kaminari', '1.2.2'
+gem 'bootstrap5-kaminari-views'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
