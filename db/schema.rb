@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_18_141238) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_18_170919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hosts", force: :cascade do |t|
+    t.string "host_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_name"], name: "index_hosts_on_host_name", unique: true
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "host_name"
+    t.string "channel"
+    t.string "day_of_week", null: false
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title", "channel"], name: "index_programs_on_title_and_channel", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
