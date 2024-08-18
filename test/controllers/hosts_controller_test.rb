@@ -1,33 +1,33 @@
 require "test_helper"
 
-class ProgramsControllerTest < ActionDispatch::IntegrationTest
+class HostsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get programs_index_url
+    get hosts_index_url
     assert_response :success
   end
 
   test "should get new" do
-    get programs_new_url
+    get hosts_new_url
     assert_response :success
   end
 
   test "should get create" do
-    get programs_create_url
+    get hosts_create_url
     assert_response :success
   end
 
   test "should get edit" do
-    get programs_edit_url
+    get hosts_edit_url
     assert_response :success
   end
 
   test "should get update" do
-    get programs_update_url
+    get hosts_update_url
     assert_response :success
   end
 
   test "should get destroy" do
-    get programs_destroy_url
+    get hosts_destroy_url
     assert_response :success
   end
 end
