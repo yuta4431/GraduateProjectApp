@@ -10,13 +10,14 @@ class ProgramsController < ApplicationController
   def create
     @program = current_user.programs.build(program_params)
     if @program.save
-      redirect_to root_path, success: "番組メモを作成しました"
+      redirect_to program_path(@program), success: "番組メモを作成しました"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
+    @program = Program.find(params[:id])
   end
 
   def edit
@@ -31,6 +32,6 @@ class ProgramsController < ApplicationController
   private
 
   def program_params
-    params.require(:program).permit(:name, :channel, :date_and_time)
+    params.require(:program).permit(:name, :host_name, :channel, :broadcast_day, :start_time, :end_time)
   end
 end

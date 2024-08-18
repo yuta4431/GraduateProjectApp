@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_18_025851) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_18_054218) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,19 +18,21 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_18_025851) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
     t.integer "program_id"
-    t.index ["user_id"], name: "index_hosts_on_user_id"
   end
 
   create_table "programs", force: :cascade do |t|
     t.string "name", null: false
     t.string "channel", null: false
     t.datetime "date_and_time"
-    t.bigint "host_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["host_id"], name: "index_programs_on_host_id"
+    t.string "broadcast_day"
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "user_id", null: false
+    t.string "host_name"
+    t.index ["user_id"], name: "index_programs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_18_025851) do
   end
 
   add_foreign_key "hosts", "programs"
-  add_foreign_key "hosts", "users"
-  add_foreign_key "programs", "hosts"
+  add_foreign_key "programs", "users"
 end

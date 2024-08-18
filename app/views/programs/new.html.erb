@@ -1,18 +1,31 @@
-<h1>番組メモ登録</h1>
-<%= form_with model: @host do |f| %>
+<h1>番組情報登録</h1>
+<%= form_with model: @program, local: true do |f| %>
   <div class='field'>
-    <%= f.label :パーソナリティ名, class: "form-label" %>
+    <%= f.label :番組名, class: "form-label" %>
     <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div>
+    <div class='field'>
+    <%= f.label :パーソナリティ名, class: "form-label" %>
+    <%= f.text_field :host_name, class: 'form-control' %>
+  </div>
+  <div class='field'>
     <%= f.label :放送局, class: "form-label" %>
     <%= f.text_field :channel, class: 'form-control' %>
   </div>
-  <div>
+  <div class='field'>
     <%= f.label :放送日時, class: "form-label" %>
-    <%= f.datetime_select :date_and_time, class: 'form-control' %>
+    <%= f.text_field :broadcast_day, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :放送開始時刻 , class: "form-label" %>
+    <%= f.time_select :start_time, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :放送終了時刻 , class: "form-label" %>
+    <%= f.time_select :end_time, class: 'form-control' %>
   </div>
   <div class='actions'>
-   <%= f.submit :登録,  class: 'btn btn-primary' %>
+   <%= f.submit "登録",  class: 'btn btn-primary' %>
   </div>
 <% end %>
