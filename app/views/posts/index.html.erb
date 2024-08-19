@@ -1,0 +1,16 @@
+<h1>番組メモ一覧</h1>
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2>
+      <%= link_to post.title, post_path(post) %>
+    </h2>
+    <p>
+      <strong>放送日時:</strong>
+      <%= post.broadcast_date.strftime("%Y-%m-%d") %>
+    </p>
+    <p>
+      <strong>放送内容・感想など</strong>
+      <%= post.content %>
+    </p>
+  </div>
+<% end %>

@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :programs
   has_many :hosts
+  has_many :posts
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 255 }
   validates :password, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }
