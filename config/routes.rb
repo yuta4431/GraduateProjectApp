@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy', as: 'logout'
   
   resources :users, only: %i[new create]
+  resources :hosts
+  resources :programs
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "programs#index"
 end
