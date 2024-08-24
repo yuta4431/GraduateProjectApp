@@ -1,0 +1,31 @@
+<h1>番組情報編集</h1>
+<%= form_with model: @program do |f| %>
+  <div class='field'>
+    <%= f.label "番組名", class: "form-label" %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+    <div class='field'>
+    <%= f.label "パーソナリティ名", class: "form-label" %>
+    <%= f.text_field :host_name, class: 'form-control' %>
+  </div>
+  <div class='field'>
+    <%= f.label "放送局", class: "form-label" %>
+    <%= f.text_field :channel, class: 'form-control' %>
+  </div>
+  <div class='field'>
+    <%= f.label "放送日時", class: "form-label" %>
+    <%= f.text_field :day_of_week, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label "放送開始時刻" , class: "form-label" %>
+    <%= f.time_select :start_time, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "放送終了時刻" , class: "form-label" %>
+    <%= f.time_select :end_time, class: 'form-control' %>
+  </div>
+  <div class='actions'>
+   <%= f.submit "編集",  class: 'btn btn-primary' %>
+  </div>
+<% end %>
