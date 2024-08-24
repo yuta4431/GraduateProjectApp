@@ -1,0 +1,21 @@
+<% @programs.each do |program| %>
+  <h1>
+    <%= link_to program.title, program_path(program) %>
+  </h1>
+  <p>
+    <strong>パーソナリティ名:</strong>
+    <%= program.host_name %>
+  </p>
+  <p>
+    <strong>放送日時:</strong>
+    <%= program.day_of_week %>
+  </p>
+  <p>
+    <strong>放送開始時刻:</strong>
+    <%= program.start_time.strftime("%H:%M") %>
+  </p>
+  <p>
+    <strong>放送終了時刻:</strong>
+    <%= program.end_time.strftime("%H:%M") %>
+  </p>
+<% end %>

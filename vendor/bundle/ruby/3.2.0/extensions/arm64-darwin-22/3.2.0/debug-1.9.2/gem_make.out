@@ -1,0 +1,19 @@
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/debug-1.9.2/ext/debug
+/Users/yuta/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-383f71 sitelibdir\=./.gem.20240819-47419-383f71 clean
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-383f71 sitelibdir\=./.gem.20240819-47419-383f71
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-383f71 sitelibdir\=./.gem.20240819-47419-383f71 install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20240819-47419-383f71/debug
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-383f71 sitelibdir\=./.gem.20240819-47419-383f71 clean
