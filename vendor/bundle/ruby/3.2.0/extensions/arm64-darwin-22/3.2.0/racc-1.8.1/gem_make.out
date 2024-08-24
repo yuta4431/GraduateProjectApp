@@ -1,0 +1,18 @@
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/yuta/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-nxaj5v sitelibdir\=./.gem.20240819-47419-nxaj5v clean
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-nxaj5v sitelibdir\=./.gem.20240819-47419-nxaj5v
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-nxaj5v sitelibdir\=./.gem.20240819-47419-nxaj5v install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20240819-47419-nxaj5v/racc
+
+current directory: /Users/yuta/RADImemO/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240819-47419-nxaj5v sitelibdir\=./.gem.20240819-47419-nxaj5v clean

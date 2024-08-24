@@ -1,0 +1,24 @@
+<p>
+  <strong>番組名:</strong>
+  <%= @program.title %>
+</p>
+<p>
+  <strong>パーソナリティ名:</strong>
+  <%= @program.host_name %>
+</p>
+<p>
+  <strong>放送日時:</strong>
+  <%= @program.day_of_week %>
+</p>
+<p>
+  <strong>放送開始時刻:</strong>
+  <%= @program.start_time.strftime("%H:%M") %>
+</p>
+<p>
+  <strong>放送終了時刻:</strong>
+  <%= @program.end_time.strftime("%H:%M") %>
+</p>
+<%= link_to '一覧', programs_path %>
+<%= link_to '編集', edit_program_path(@program) %>
+<%= link_to '削除', program_path(@program), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
+
