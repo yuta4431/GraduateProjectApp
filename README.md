@@ -56,3 +56,11 @@ MVPリリース
 一般的なCRUD以外の実装予定の機能についてそれぞれどのようなイメージ(使用するAPIや)で実装する予定なのか現状考えているもので良いので教えて下さい。
 
 メモ機能: ローカルデータベースを利用し、ユーザーが取ったメモを保存。時間とメモを紐づけて記録。
+リマインダー機能: デバイスの通知システムを利用して、ユーザーが設定したリマインダーを送信。
+検索機能: 番組のタイトルや説明に基づいて、クエリをフィルタリングし、ユーザーに検索結果を表示。
+
+画面遷移図
+https://www.figma.com/design/AKrMMKgF9PWjSMG1N2GOIX/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=qUFDhR9insbvfgSj-0
+
+ER図
+https://lucid.app/lucidchart/5a3dde9e-aa89-4ddc-8bd1-65cfbbdcfeb7/edit?invitationId=inv_e9157fb1-7153-422e-bde7-5dbc34116732&page=0_0
