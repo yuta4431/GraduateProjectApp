@@ -1,36 +1,16 @@
-<!DOCTYPE html>
-<html data-theme="right"></html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ログイン</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="w-full min-h-screen flex items-center justify-center">
-  <div class="w-full max-w-xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-center">ログイン</h2>
-    <%= form_with url: login_path, method: :post, local: true do |f| %>
-      <label class="form-control w-full max-w-xl">
-        <div class="label">
-          <span class="label-text">ユーザー名</span>
-        </div>
-        <input type="text" class="input input-bordered w-full max-w-xl" />
-        <div class="label">
-          <span class="label-text">パスワード</span>
-        </div>
-        <input type="password" class="input input-bordered w-full max-w-xl mb-6" />
-      </label>
-      <div class="flex justify-center mb-6">
-        <button class="btn bg-orange-500 hover:bg-orange-600 text-white">ログイン</button>
-      </div>
-      <div class="mt-4 text-center">
-        <%= link_to 'ユーザー作成はこちら', new_user_path, class: "link link-primary" %>
-      </div>
-      <div class="mt-4 text-center">
-        <%= link_to 'パスワードを忘れましたか？', "#", class: "link link-primary" %>
-      </div>
-    <% end %>
+<h1>ログイン</h1>
+<%= form_with url: login_path do |f| %>
+  <div class="mb-3">
+    <%= f.label "ユーザー名" %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-</body>
+  <div class="mb-3">
+    <%= f.label "パスワード" %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <%= f.submit "ログイン", class: 'btn btn-primary' %>
+<% end %>
+<div class='text-center'>
+  <%= link_to "ユーザー登録はこちら", new_user_path %>
+  <%= link_to "パスワードをお忘れの方はこちら", "#" %>
+</div>
