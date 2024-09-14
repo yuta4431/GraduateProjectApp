@@ -1,24 +1,17 @@
-<p>
-  <strong>番組名:</strong>
-  <%= @program.title %>
-</p>
-<p>
-  <strong>パーソナリティ名:</strong>
-  <%= @program.host_name %>
-</p>
-<p>
-  <strong>放送日時:</strong>
-  <%= @program.day_of_week %>
-</p>
-<p>
-  <strong>放送開始時刻:</strong>
-  <%= @program.start_time.strftime("%H:%M") %>
-</p>
-<p>
-  <strong>放送終了時刻:</strong>
-  <%= @program.end_time.strftime("%H:%M") %>
-</p>
-<%= link_to '一覧', programs_path %>
-<%= link_to '編集', edit_program_path(@program) %>
-<%= link_to '削除', program_path(@program), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
-
+<div class="card bg-white shadow-lg rounded-lg overflow-hidden p-8">
+  <div class="card-body">
+    <div class="card-title text-2xl font-bold mb-8 text-center">
+      <%= @program.title %>
+    </div>
+    <div class="text-gray-600 mb-4 text-center">
+      <%= "パーソナリティ : #{@program.host_name}" %>
+    </div>
+    <div class="text-gray-600 mb-8 text-center">
+      <%= "放送日時 : #{@program.day_of_week} #{@program.start_time.strftime("%H:%M")} 〜 #{@program.end_time.strftime("%H:%M")}" %>
+    </div>
+    <div class="mb-2 text-center">
+      <%= link_to '編集', edit_program_path(@program), class: 'btn text-white', style: 'background-color: #34c759; border-color: #34c759;' %>
+      <%= link_to '削除', program_path(@program), class: 'btn text-white', style: 'background-color: #ff3b31; border-color: #ff3b31;', data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
+    </div>
+  </div>
+</div>
