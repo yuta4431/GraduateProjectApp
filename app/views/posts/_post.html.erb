@@ -4,7 +4,7 @@
       <%= link_to post.title, post_path(post), class: "text-blue-500 hover:underline" %>
     </h2>
     <div class="mb-4">
-      <%= "放送日時 : #{post.broadcast_date.strftime("%Y-%m-%d")}" %>
+      <%= "放送日時 : #{l(post.broadcast_date, format: '%Y年%m月%d日 (%a)')}" %>
     </div>
     <div>
       <%= "放送内容・感想など : #{post.content}" %>
