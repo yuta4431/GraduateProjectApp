@@ -1,14 +1,17 @@
-<h1>
-  <%= @post.title %>
-</h1>
-<p>
-  <strong>放送日時:</strong>
-  <%= @post.broadcast_date.strftime("%Y-%m-%d") %>
-</p>
-<p>
-  <strong>放送内容・感想など</strong>
-  <%= @post.content %>
-</p>
-<%= link_to '一覧', posts_path %>
-<%= link_to '編集', edit_post_path(@post) %>
-<%= link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
+<div class="card bg-white shadow-lg rounded-lg overflow-hidden p-8">
+  <div class="card-body">
+    <div class="card-title text-2xl font-bold mb-8 text-center">
+      <%= @post.title %>
+    </div>
+    <div class="mb-4 text-center">
+      <%= "放送日時 : #{l(@post.broadcast_date, format: '%Y年%m月%d日 (%a)')}" %>
+    </div>
+    <div class="mb-8 text-center">
+      <%= "放送内容・感想など : #{@post.content}" %>
+    </div>
+    <div class="mb-2 text-center">
+      <%= link_to '編集', edit_post_path(@post), class: 'btn text-white', style: 'background-color: #34c759; border-color: #34c759;' %>
+      <%= link_to '削除', post_path(@post), class: 'btn text-white', style: 'background-color: #ff3b31; border-color: #ff3b31;', data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
+    </div>
+  </div>
+</div>
