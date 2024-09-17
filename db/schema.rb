@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_14_003004) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_17_131227) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_14_003004) do
     t.time "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "host_id"
     t.index ["title", "channel"], name: "index_programs_on_title_and_channel", unique: true
   end
 
@@ -55,4 +56,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_14_003004) do
 
   add_foreign_key "posts", "programs"
   add_foreign_key "posts", "users"
+  add_foreign_key "programs", "hosts"
 end

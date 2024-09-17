@@ -15,6 +15,7 @@ class Program < ApplicationRecord
   private
 
   def create_host_record
-    Host.find_or_create_by!(host_name: host_name)
+    host_record = Host.find_or_create_by!(host_name: host_name)
+    self.host_id = host_record.id
   end
 end

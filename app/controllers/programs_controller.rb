@@ -2,11 +2,12 @@ class ProgramsController < ApplicationController
   before_action :set_program, only: %i[show edit update destroy]
   
   def index
-    @programs = Program.all
+    @programs = Program.all.sort_by { |program| [week_day_order(extract_day_of_week(program.day_of_week)), program.start_time] }
   end
 
   def new
-    @program = Program.new
+    @programs = Program.all.order(day_of_week: :asc)
+    @programs = @programs.sort_by { |program| week_day_order(program.day_of_week) }
   end
 
   def create
@@ -44,5 +45,14 @@ class ProgramsController < ApplicationController
   
   def set_program
     @program = Program.find(params[:id])
+  end
+
+  def extract_day_of_week(day_of_week)
+    day_of_week.match(/(月曜日|火曜日|水曜日|木曜日|金曜日|土曜日|日曜日)/)&.to_s
+  end
+
+  def week_day_order(day_of_week)
+    days = %w[月曜日 火曜日 水曜日 木曜日 金曜日 土曜日 日曜日]
+    days.index(day_of_week) || 0
   end
 end
