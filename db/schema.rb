@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_17_131227) do
     t.index ["host_name"], name: "index_hosts_on_host_name", unique: true
   end
 
+  create_table "hosts_programs", force: :cascade do |t|
+    t.bigint "host_id", null: false
+    t.bigint "program_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_id"], name: "index_hosts_programs_on_host_id"
+    t.index ["program_id"], name: "index_hosts_programs_on_program_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title", null: false
     t.date "broadcast_date", null: false
@@ -54,7 +63,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_17_131227) do
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
+  add_foreign_key "hosts_programs", "hosts"
+  add_foreign_key "hosts_programs", "programs"
   add_foreign_key "posts", "programs"
   add_foreign_key "posts", "users"
-  add_foreign_key "programs", "hosts"
 end

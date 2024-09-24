@@ -4,7 +4,8 @@
       <%= link_to program.title, program_path(program), class: "text-blue-500 hover:underline" %>
     </div>
     <div class="mb-4 text-center">
-      <%= "パーソナリティ : #{program.host_name}" %>
+      パーソナリティ :
+      <%= link_to program.host_name, host_path(program.host_id), class: "text-blue-500 hover:underline" %>
     </div>
     <div class="mb-4 text-center">
       <%= "放送局 : #{program.channel}" %>

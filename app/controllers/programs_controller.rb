@@ -13,6 +13,10 @@ class ProgramsController < ApplicationController
   def create
     @program = Program.new(program_params)
     if @program.save
+      host = Host.find_or_create_by(host_name: @program.host_name)
+      @program.hosts << host unless @program.hosts.include?(host)
+      @program.update(host_id: host.id)
+
       redirect_to programs_path, success: "番組情報を作成しました"
     else
       render :new, status: :unprocessable_entity
@@ -40,7 +44,7 @@ class ProgramsController < ApplicationController
   private
 
   def program_params
-    params.require(:program).permit(:title, :host_name, :channel, :day_of_week, :start_time, :end_time)
+    params.require(:program).permit(:title, :host_name, :channel, :day_of_week, :start_time, :end_time, :host_id)
   end
   
   def set_program
