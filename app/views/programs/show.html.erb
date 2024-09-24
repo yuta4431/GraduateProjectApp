@@ -1,10 +1,13 @@
+<h1 class="font-bold mb-6 text-center" style="font-size: 2.5rem;">番組詳細</h1>
+
 <div class="card bg-white shadow-lg rounded-lg overflow-hidden p-8">
   <div class="card-body">
     <div class="card-title text-2xl font-bold mb-8 text-center">
       <%= @program.title %>
     </div>
     <div class="text-gray-600 mb-4 text-center">
-      <%= "パーソナリティ : #{@program.host_name}" %>
+      パーソナリティ : 
+      <%= link_to @program.host_name, host_path(@program.host_id), class: "text-blue-500 hover:underline" %>
     </div>
     <div class="text-gray-600 mb-8 text-center">
       <%= "放送日時 : #{@program.day_of_week} #{@program.start_time.strftime("%H:%M")} 〜 #{@program.end_time.strftime("%H:%M")}" %>

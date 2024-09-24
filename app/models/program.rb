@@ -1,5 +1,6 @@
 class Program < ApplicationRecord
-  has_many :hosts
+  has_many :hosts_programs, dependent: :destroy
+  has_many :hosts, through: :hosts_programs
   has_many :posts
   belongs_to :user, optional: true
 
@@ -9,12 +10,4 @@ class Program < ApplicationRecord
   validates :day_of_week, presence: true, length: { maximum: 255 }
   validates :start_time, presence: true
   validates :end_time, presence: true
-
-  before_save :create_host_record
-
-  private
-
-  def create_host_record
-    Host.find_or_create_by!(host_name: host_name)
-  end
 end
