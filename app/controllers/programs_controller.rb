@@ -6,7 +6,8 @@ class ProgramsController < ApplicationController
   end
 
   def new
-    @program = Program.new
+    @programs = Program.all.order(day_of_week: :asc)
+    @programs = @programs.sort_by { |program| week_day_order(program.day_of_week) }
   end
 
   def create
