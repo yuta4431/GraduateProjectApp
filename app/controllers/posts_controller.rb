@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   
   def index
-    @posts = Post.order(broadcast_date: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).order(broadcast_date: :desc)
   end
 
   def new
