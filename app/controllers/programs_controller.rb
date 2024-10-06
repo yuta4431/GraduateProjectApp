@@ -2,7 +2,8 @@ class ProgramsController < ApplicationController
   before_action :set_program, only: %i[show edit update destroy]
   
   def index
-    @programs = Program.all.sort_by { |program| [week_day_order(extract_day_of_week(program.day_of_week)), program.start_time] }
+    @q = Program.ransack(params[:q])
+    @programs = @q.result(distinct: true).sort_by { |program| [week_day_order(extract_day_of_week(program.day_of_week)), program.start_time] }
   end
 
   def new
@@ -13,7 +14,7 @@ class ProgramsController < ApplicationController
   def create
     @program = Program.new(program_params)
     if @program.save
-      host = Host.find_or_create_by(host_name: @program.host_name)
+      host = Host.find_or_create_by(name: @program.host_name)
       @program.hosts << host unless @program.hosts.include?(host)
       @program.update(host_id: host.id)
 
